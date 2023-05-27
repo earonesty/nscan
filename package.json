@@ -1,0 +1,32 @@
+{
+  "name": "nscan",
+  "version": "1.0.0",
+  "description": "nostr channel scanner and data aggregator",
+  "main": "index.js",
+  "repository": "https://github.com/earonesty/nscan.git",
+  "author": "erik aronesty",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/cli.ts",
+    "test": "jest",
+    "bundle": "yarn build && npm pack"
+  },
+  "bin": {
+    "nscan": "./dist/cli.js"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/jest": "^29.5.1",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "commander": "^10.0.1",
+    "nostr-tools": "^1.11.1",
+    "websocket-polyfill": "^0.0.3",
+    "ws": "^8.13.0"
+  }
+}
