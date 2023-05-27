@@ -2,7 +2,7 @@
   "name": "nscan",
   "version": "1.0.3",
   "description": "nostr channel scanner and data aggregator",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "repository": "https://github.com/earonesty/nscan.git",
   "author": "erik aronesty",
   "license": "MIT",
