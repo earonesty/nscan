@@ -1,4 +1,5 @@
 *.swp
 dist/
 top.json
+nscan.json
 node_modules

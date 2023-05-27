@@ -11,6 +11,10 @@ const DEFAULT_RELAYS = [
     'wss://relay.damus.io',
     'wss://relay.snort.social',
     'wss://nos.lol',
+    'wss://eden.nostr.land',
+    "wss://welcome.nostr.wine",
+    "wss://relay.nostr.band/all",
+    "wss://nostr.mutinywallet.com",
 ]
 
 
