@@ -1,6 +1,6 @@
 {
   "name": "nscan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "nostr channel scanner and data aggregator",
   "main": "index.js",
   "repository": "https://github.com/earonesty/nscan.git",
