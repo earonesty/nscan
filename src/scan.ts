@@ -1,6 +1,13 @@
 import { SimplePool, Event } from 'nostr-tools';
 import "websocket-polyfill";
 
+export interface Config {
+  top: number;
+  days: number;
+  msgs: number;
+  out: string;
+  relays: string[];
+}
 
 export class MapD<K, V> extends Map<K, V> {
   default: () => any;
@@ -128,3 +135,25 @@ export function bestChannels(channels: ChannelMap, top: number): ChannelMap {
   return new Map(lst);
 }
 
+export async function scanChannels(cfg: Config) {
+  const pool = new SimplePool();
+
+  console.log(`# collecting ${cfg.days} days of info`);
+
+  let channels: ChannelMap = await scan1(cfg.relays, pool, cfg.days, cfg.msgs);
+  channels = bestChannels(channels, cfg.top);
+
+  const need_creates: string[] = needCreates(channels);
+
+  console.log(`# collecting missing ${need_creates.length} create ids`);
+
+  for (const ev of await scan2(cfg.relays, pool, need_creates)) {
+    channels.get(ev.id)!.ev = ev;
+  }
+
+  pool.close(cfg.relays);
+
+  console.log(`# got top ${channels.size} channels with ${cfg.msgs} samples`);
+
+  return channels;
+}
