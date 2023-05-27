@@ -3,7 +3,7 @@
 import { Command } from 'commander'
 const program = new Command()
 import * as fs from 'fs';
-import { scanChannels, Config } from './scan';
+import { scanChannels, Config } from './scan.js';
 
 const DEFAULT_RELAYS = [
     'wss://relay1.nostrchat.io',

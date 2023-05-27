@@ -96,7 +96,7 @@ export function scan1(relays: string[], pool: SimplePool, days: number, msg_cnt:
       if (!tag_e) return
       const m = known_channels.get(tag_e[1]);
       m.cnt += 1
-      if (m.msg,length < msg_cnt) {
+      if (m.msg.length < msg_cnt) {
         m.msg.push(ev);
       }
     }
