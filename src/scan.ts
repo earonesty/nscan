@@ -135,7 +135,17 @@ export function bestChannels(channels: ChannelMap, top: number): ChannelMap {
   return new Map(lst);
 }
 
-export async function scanChannels(cfg: Config) {
+function mapToObject<K, V>(map: Map<K, V>): { [key: string]: V } {
+  const obj: { [key: string]: V } = {};
+
+  for (const [key, value] of map.entries()) {
+    obj[String(key)] = value;
+  }
+
+  return obj;
+}
+
+export async function scanChannels(cfg: Config) : Promise<Object> {
   const pool = new SimplePool();
 
   console.log(`# collecting ${cfg.days} days of info`);
@@ -155,5 +165,5 @@ export async function scanChannels(cfg: Config) {
 
   console.log(`# got top ${channels.size} channels with ${cfg.msgs} samples`);
 
-  return channels;
+  return mapToObject(channels);
 }

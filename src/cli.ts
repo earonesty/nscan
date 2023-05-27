@@ -39,7 +39,7 @@ try {
 async function main() {
     const channels = await scanChannels(cfg)
     console.log(`writing to ${cfg.out}`)
-    fs.writeFileSync(cfg.out, JSON.stringify(channels), {encoding: "utf-8"})
+    fs.writeFileSync(cfg.out, JSON.stringify(channels))
 }
 
 main()

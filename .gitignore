@@ -1,0 +1,4 @@
+*.swp
+dist/
+top.json
+node_modules
