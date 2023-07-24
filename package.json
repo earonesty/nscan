@@ -1,6 +1,6 @@
 {
   "name": "nscan",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "nostr channel scanner and data aggregator",
   "main": "./dist/index.js",
   "repository": "https://github.com/earonesty/nscan.git",
@@ -12,7 +12,7 @@
     "test": "jest",
     "bundle": "yarn build && npm pack"
   },
-  "engines":{
+  "engines": {
     "node": ">=12"
   },
   "bin": {
