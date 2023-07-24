@@ -12,6 +12,9 @@
     "test": "jest",
     "bundle": "yarn build && npm pack"
   },
+  "engines":{
+    "node": ">=12"
+  },
   "bin": {
     "nscan": "./dist/cli.js"
   },
